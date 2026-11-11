@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+    #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; 
+    }
+    .loader {
+        text-align: center;
+    }
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(255, 0, 128, 0.3);
+        border-top: 5px solid rgba(255, 0, 128, 1);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    /* Spinner Animation */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    /* Hide Preloader after loading */
+    body.loaded #preloader {
+        display: none;
+    }
+    /* General Styles */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    h2 {
+        position: relative;
+        z-index: 1; 
+    }
+    
+    /* Smooth Navbar Animation */
+    @keyframes fadeSlideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+    </head>
+    <body>
+        
+        <!-- Preloader -->
+         <div id="preloader">
+            <div class="loader">
+                <div class="spinner"></div>
+                <p>Loading...</p>
+            </div>
+        </div>
+        
+        <!--Nav Bar-->
+        <div class="nav-container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fas fa-heart" style="color: red;"></i><span class="site-name" style="font-family: Comic San; text-align: left;" >Astro Affinity Matrimony</span>
+                </div>
+                <a href="index.html">Home</a>
+                <a href="packages.html" class="active">Packages</a>
+                <a href="profile.html">Profiles</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="#" id="loginBtn">Login</a>
+                <a href="#" id="logoutBtn" style="display: none;">Logout</a>
+                <a href="#" id="userProfileIcon" class="user-icon" role="button" aria-label="User Profile">
+                    <i class="fas fa-user user-icon"></i>
+                </a>     
+            </div> 
+        </div>
+
+        <div id="profileModal" class="modal">
+            <div class="modal-content1">
+                <span class="close">&times;</span>
+                <h2>User Profile</h2>
+                <form id="editProfileForm">
+                    <img id="profileImage" src="default.jpg" alt="User Photo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+
+                    <label for="editName">Name:</label>
+                    <input type="text" id="editName" name="name">
+        
+                    <label for="editEmail">Email:</label>
+                    <input type="email" id="editEmail" name="email" readonly>
+        
+                    <label for="editDob">Date of Birth:</label>
+                    <input type="date" id="editDob" name="dob">
+        
+                    <label for="editHeight">Height:</label>
+                    <input type="text" id="editHeight" name="height">
+        
+                    <label for="editCity">Current City:</label>
+                    <input type="text" id="editCity" name="current_city">
+        
+                    <button type="submit">Edit Details</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Login Modal -->
+         <div id="loginModal" class="modal">
+            <div class="modal-content" style="background-color: bisque;">
+                <span class="close" id="closeLogin">&times;</span>
+                <h2>Login</h2>
+                <form id="loginForm" action="login.php" method="POST">
+                    <label for="loginEmail">Email Address:</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                    <strong><a href="#" id="forgotPasswordLink">Forgot Password?</a></strong>
+
+                    <!--New User Registration Link-->
+                    <p>
+                        <strong>If You Are New User?
+                            <a href="register.html" id="newUserLinkaid">Register Here!!!</a>
+                        </strong>
+                    </p>
+
+                    <div style="margin-top: 10px; align-items: center; justify-content: center; gap: 8px;"">
+                        <input type="checkbox" id="termsCheckbox" required>
+                        <label for="termsCheckbox">
+                            I agree to the <a href="t&c.html" target="_blank" style="color: black;">Terms and Conditions</a>
+                            <a href="pp.html" target="_blank" style="color: black;">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Forgot Password Modal -->
+         <div id ="resetPasswordModal" class="modal">
+            <div class="modal-content" style="background-color: bisque;">
+                <span class="close" id="closeResetPassword">&times;</span>
+                <h2>Lets Reset Your Password!!</h2>
+                <form id="resetPasswordForm">
+                    <label for="resetEmail">Enter Your Email:</label>
+                    <input type="email" id="resetEmail" name="email" required>
+                    <label for="resetPassword">Enter Your New Password:</label>
+                    <input type="password" id="resetPassword" name="resetPassword" required>
+                    <label for="confirmPassword">Confirm Your Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <button type="submit">Reset Password</button>
+                </form>
+            </div>
+        </div>
+
+    <!--Body Section-->
+    <div class="header-section" style="margin-top: 60px;"">
+        <h2>Our Matrimony Packages</h2>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <span>Pages</span> / <a href="packages.html">Packages</a>
+        </div>
+    </div>
+    
+    <!-- Package Counter -->
+     <div class="container-fluid counter py-5" style="background-color: antiquewhite;">
+        <div class="free-package-container">
+            <h3 style="text-align: center; font-family: Comic Sans;"><u>Free Package (0/=)</u></h3>
+            <div style="display: flex; align-items: center; justify-content: left; gap: 20px;">
+                <img src="image/image 07.avif" class="shine" style="height: 200px; width: 1000px;">
+                <p style="text-align: justify; font-size: 15px; font-family: Comic Sans; color: black;">
+                    Create and manage your profile effortlessly while browsing and expressing interest in potential matches with ease. Our platform provides a seamless experience, allowing you to showcase your personality, preferences, and expectations in a well-structured profile. You can explore various profiles and express your interest in individuals who align with your values and preferences. Additionally, you will receive a limited number of matches specifically tailored to suit your requirements, ensuring that your search for the perfect match remains focused and meaningful.
+                </p>
+            </div>
+            <div class="text-center mt-3"><button class="btn btn-primary subscribe-package" type="button" data-package="Free">Choose Free</button></div>
+        </div>
+    </div>
+    
+    <div class="container-fluid counter py-5" style="background-color: wheat;">
+        <div class="silver-package-container">
+            <h3 style="text-align: center; font-family: Comic Sans;"><u>Silver Package (20,000/=)</u></h3>
+            <div style="display: flex; align-items: center; justify-content: left; gap: 20px;">
+                <img src="image/image 15.jpg" style="height: 200px; width: 300px;">
+                <p style="text-align: justify; font-size: 15px; font-family: Comic Sans; color: black;">
+                    The Silver Package enhances your matchmaking experience by including all Basic Package features while offering unlimited profile views, unrestricted interest requests, and direct chat access with compatible matches. This allows for deeper connections and meaningful conversations before making commitments. Additionally, subscribers receive priority customer support for prompt assistance with inquiries and technical issues. Designed for users seeking greater flexibility and engagement, the Silver Package is an affordable choice for those serious about finding a compatible partner and maximizing their chances of a meaningful connection.
+                </p>
+            </div>
+            <div class="text-center mt-3"><button class="btn btn-primary subscribe-package" type="button" data-package="Silver">Request Silver</button></div>
+        </div>
+    </div>
+    
+    <div class="container-fluid counter py-5" style="background-color: antiquewhite;">
+        <div class="gold-package-container">
+            <h3 style="text-align: center; font-family: Comic Sans;"><u>Gold Package (30,000/=)</u></h3>
+            <div style="display: flex; align-items: center; justify-content: left; gap: 20px;">
+                <img src="image/image 12.avif" style="height: 200px; width: 300px;">
+                <p style="text-align: justify; font-size: 15px; font-family: Comic Sans; color: black;">
+                    The Gold Package offers a premium matchmaking experience by including all the features of the Silver Package, along with exclusive benefits designed to boost your visibility and enhance your chances of finding the perfect match. With this package, your profile is highlighted to stand out among others, ensuring better visibility and attracting more attention. You also receive personalized match recommendations from our experts, tailored to your preferences, making the search process more efficient and effective. Additionally, the Gold Package provides access to the contact details of interested profiles, allowing you to connect directly with potential matches. Ideal for users seeking increased visibility, expert guidance, and direct connections, the Gold Package is a top-tier option for those ready to take their matchmaking journey to the next level.
+                </p>
+            </div>
+            <div class="text-center mt-3"><button class="btn btn-primary subscribe-package" type="button" data-package="Gold">Request Gold</button></div>
+        </div>
+    </div>
+    
+    <div class="container-fluid counter py-5" style="background-color: wheat;">
+        <div class="platinum-package-container">
+            <h3 style="text-align: center; font-family: Comic Sans;"><u>Platinum Package (60,000/=)</u></h3>
+            <div style="display: flex; align-items: center; justify-content: left; gap: 20px;">
+                <img src="image/image 06.avif" style="height: 200px; width: 300px;">
+                <p style="text-align: justify; font-size: 15px; font-family: Comic Sans; color: black;">
+                    The Platinum Package offers the ultimate premium matchmaking experience, incorporating all the features of the Gold Package while providing exclusive VIP services for those seeking a highly personalized approach. With this package, you gain access to a dedicated relationship manager who guides you through every step of your matchmaking journey, ensuring a smooth and tailored experience. Our team of experts handpicks and verifies matches based on compatibility, significantly increasing the chances of finding your ideal partner. Additionally, you receive direct assistance with profile optimization, ensuring your profile stands out and attracts the right matches. Designed for users who want the highest level of service, exclusive matchmaking, and dedicated support, the Platinum Package is the perfect choice for those committed to finding a meaningful and lasting connection.
+                </p>
+            </div>
+            <div class="text-center mt-3"><button class="btn btn-primary subscribe-package" type="button" data-package="Platinum">Request Platinum</button></div>
+        </div>
+    </div>
+    <!-- End of the Package Counter-->
+
+    <!--Footer Section-->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Astro Affinity</h3>
+                <p style="color: black;">**Astro Affinity Matrimony** Founded in 2009, Astro Affinity Matrimony has been dedicated to uniting hearts through the wisdom of astrology. Our service blends traditional astrological practices with modern matchmaking techniques to create meaningful and lasting connections. With over a decade of experience, we specialize in crafting soulmate relationships guided by the stars, ensuring compatibility and happiness for every couple.</p>
+            </div>
+    
+            <!-- Working Hours -->
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Monday - Friday</h2>
+                            <p style="color: black">(09:00 AM - 18:00 PM)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Saturday</h5>
+                            <p style="color: black;">(09:00 AM - 13:00 PM)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Sunday</h5>
+                            <p style="color: black;">(Closed)</p>
+                        </div>
+                    </li>
+                    </ul>
+            </div>
+    
+            <!-- Branches -->
+            <div class="footer-section">
+                <h3>Our Branches</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Colombo</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Jaffna</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Trincomalae</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Batticalo</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Negembo</h6>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+    
+            <!-- Contact Information -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Mail Us: </h5>
+                            <p style="color: black">astro-affinity@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Call Us: </h5>
+                            <p style="color: black">+94-112857458</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Visit Us: </h5>
+                            <p style="color: black">No13, Lilly Avenue, Wellawatte, Col-06</p>
+                        </div>
+                    </li>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="profile.html">Profiles</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="t&c.html">Terms and Conditions</a></li>
+                    <li><a href="pp.html">Privacy and Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Astro Affinity Matrimony | All Rights Reserved</p>
+            <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const userProfileIcon = document.getElementById("userProfileIcon");
+        const profileModal = document.getElementById("profileModal");
+        const closeModal = document.querySelector(".close");
+
+        userProfileIcon.addEventListener("click", function () {
+            fetch("getUserProfile.php")
+            .then(response => response.json())
+            .then(userData => {
+                document.getElementById("editName").value = userData.name;
+                document.getElementById("editEmail").value = userData.email;
+                document.getElementById("editDob").value = userData.dob;
+                document.getElementById("editHeight").value = userData.height;
+                document.getElementById("editCity").value = userData.current_city;
+                const imageE1 = document.getElementById("profileImage");
+                imageE1.src = userData.photo_url || "default.jpg";
+                profileModal.style.display = "block";
+            });
+        });
+        closeModal.addEventListener("click", function () {
+            profileModal.style.display = "none";
+        });
+        document.getElementById("editProfileForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+            fetch("update_profile.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(response => {
+                if (response.trim() === "success") {
+                    Swal.fire("Profile Updated!", "Your changes have been saved.", "success");
+                    profileModal.style.display = "none";
+            } else {
+                Swal.fire("Error", "Failed to update profile. Try again.", "error");
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

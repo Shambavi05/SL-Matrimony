@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+
+        /* Default button style */
+        .profile-actions .btn-primary {
+            background-color: #e2428d; /* Primary Blue */
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        /* Hover effect */
+        .profile-actions .btn-primary:hover {
+            background-color: #4d293d; 
+            transform: scale(1.05); 
+        }
+        /* Hover effect */
+        .profile-actions .btn-primary:hover {
+            background-color: #4d293d; 
+            transform: scale(1.05); 
+        }
+        /* Active (when clicked) */
+        .profile-actions .btn-primary:active {
+            background-color: #8a6d7d; /* Even darker blue */
+            transform: scale(0.98); /* Slight shrink effect */
+        }
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white; /* Background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Keep it above all elements */
+        }
+        .loader {
+            text-align: center;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 0, 128, 0.3);
+            border-top: 5px solid rgba(255, 0, 128, 1);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Spinner Animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Hide Preloader after loading */
+        body.loaded #preloader {
+            display: none;
+        }
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h2 {
+            position: relative;
+            z-index: 1; /* Lower than the navbar */
+        }
+        
+        /* Smooth Navbar Animation */
+        @keyframes fadeSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    </head>
+    <body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <div class="nav-container">
+        <div class="nav">
+            <div class="logo">
+        <i class="fas fa-heart" style="color: red;"></i><span class="site-name" style="font-family: Comic San; text-align: left;" >Astro Affinity Matrimony</span>
+        </div>
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="register.html">Register</a>
+        <a href="profile.html" class="active">Profiles</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="#" id="loginBtn">Login</a>
+        <a href="#" id="logoutBtn" style="display: none;">Logout</a>
+        <a href="#" id="userProfileIcon" class="user-icon" role="button" aria-label="User Profile">
+            <i class="fas fa-user user-icon"></i>
+        </a>
+    </div> 
+    </div>
+
+    <div id="profileModal" class="modal">
+        <div class="modal-content1">
+            <span class="close">&times;</span>
+            <h2>User Profile</h2>
+            <form id="editProfileForm">
+                <img id="profileImage" src="default.jpg" alt="User Photo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+
+                <label for="editName">Name:</label>
+                <input type="text" id="editName" name="name">
+    
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail" name="email" readonly>
+    
+                <label for="editDob">Date of Birth:</label>
+                <input type="date" id="editDob" name="dob">
+    
+                <label for="editHeight">Height:</label>
+                <input type="text" id="editHeight" name="height">
+    
+                <label for="editCity">Current City:</label>
+                <input type="text" id="editCity" name="current_city">
+    
+                <button type="submit">Edit Details</button>
+            </form>
+        </div>
+    </div>
+
+
+     <!-- Login Modal -->
+     <div id="loginModal" class="modal">
+        <div class="modal-content" style="background-color: bisque;">
+            <span class="close" id="closeLogin">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm" action="login.php" method="POST">
+                <label for="loginEmail">Email Address:</label>
+                <input type="email" id="loginEmail" name="email" required>
+                <label for="loginPassword">Password:</label>
+                <!--Forget Password Link-->
+                <input type="password" id="loginPassword" name="password" required>
+                <strong><a href="#" id="forgotPasswordLink">Forgot Password?</a></strong>
+                <!--New User Registration Link-->
+                <p>
+                    <strong>If You Are New User?
+                        <a href="register.html" id="newUserLinkaid">Register Here!!!</a>
+                    </strong>
+                </p>
+                <!--Privacy Policy and Terms and Conditions Box-->
+                <div style="margin-top: 10px; align-items: center; justify-content: center; gap: 8px;">
+                    <input type="checkbox" id="termsCheckbox" required>
+                    <label for="termsCheckbox">
+                        I agree to the <a href="t&c.html" target="_blank" style="color: black;">Terms and Conditions</a>
+                        <a href="pp.html" target="_blank" style="color: black;">Privacy Policy</a>
+                    </label>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    
+        <!-- Forgot Password Modal -->
+        <div id ="resetPasswordModal" class="modal">
+            <div class="modal-content" style="background-color: bisque;">
+                <span class="close" id="closeResetPassword">&times;</span>
+                <h2>Lets Reset Your Password!!</h2>
+                <form id="resetPasswordForm">
+                    <label for="resetEmail">Enter Your Email:</label>
+                    <input type="email" id="resetEmail" name="email" required>
+                    <label for="resetPassword">Enter Your New Password:</label>
+                    <input type="password" id="resetPassword" name="resetPassword" required>
+                    <label for="confirmPassword">Confirm Your Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <button type="submit">Reset Password</button>
+                </form>
+            </div>
+        </div>
+
+    <div class="header-section" style="margin-top: 60px;">
+        <h2>Find Your Partners</h2>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <span>Pages</span> / <a href="profile.html">Profiles</a>
+        </div>
+    </div>
+
+    <div class="container py-5" id="profileListings">
+        <div class="row g-3 mb-4">
+            <div class="col-md-8">
+                <label class="form-label" for="profileSearch">Search profiles</label>
+                <input class="form-control" type="search" id="profileSearch" placeholder="Search by name, city, education, or religion">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label" for="cityFilter">Filter by city</label>
+                <input class="form-control" type="search" id="cityFilter" placeholder="Enter a city">
+            </div>
+        </div>
+        <p id="profileStatus" role="status" aria-live="polite">Loading profiles…</p>
+        <div class="row g-4" id="profileGrid">
+            <!-- Profile 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile31.avif" alt="John Doe" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Christina</h5>
+                        <p>Lawyer</p>
+                        <div class="profile-actions">
+                            <a href="profile1.html" class="btn btn-primary btn-sm" onclick="viewProfile()">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile2.avif" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Anjali</h5>
+                        <p>UI/UX Engineer</p>
+                        <div class="profile-actions">
+                            <a href="profile2.html" class="btn btn-primary btn-sm" onclick="viewProfile()">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile7.avif" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Zahra</h5>
+                        <p>Front End Engineer</p>
+                        <div class="profile-actions">
+                            <a href="profile3.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile10" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Meenakshi</h5>
+                        <p>Graphic Designer</p>
+                        <div class="profile-actions">
+                            <a href="profile4.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Profile 5-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile16.webp" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Lakshanya</h5>
+                        <p>Project Manager</p>
+                        <div class="profile-actions">
+                            <a href="profile5.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 6-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile32.avif" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Akila</h5>
+                        <p>Cybersecurity Analyst</p>
+                        <div class="profile-actions">
+                            <a href="profile6.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 7-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile29.jpg" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Nethmini</h5>
+                        <p>AI Engineer</p>
+                        <div class="profile-actions">
+                            <a href="profile7.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 8-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile25.webp" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Priya</h5>
+                        <p>Network Engineer</p>
+                        <div class="profile-actions">
+                            <a href="profile8.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 9-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile26.avif" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Meenakshi</h5>
+                        <p>WordPress Developer</p>
+                        <div class="profile-actions">
+                            <a href="profile9.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 10-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile40.avif" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Hasini</h5>
+                        <p>IT Consultant</p>
+                        <div class="profile-actions">
+                            <a href="profile10.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 11-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile43.avif" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Robina</h5>
+                        <p>Cloud Engineer</p>
+                        <div class="profile-actions">
+                            <a href="profile11.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 12-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="female">
+                    <img src="image/profile42.jpeg" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Deepika</h5>
+                        <p>Data Scientist</p>
+                        <div class="profile-actions">
+                            <a href="profile12.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 13-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile60.jpg" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Vasanth</h5>
+                        <p>Java Developer</p>
+                        <div class="profile-actions">
+                            <a href="profile13.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile 14-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile8.avif" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Tharindu</h5>
+                        <p>Python Developer</p>
+                        <div class="profile-actions">
+                            <a href="profile14.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 15-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile13.jpg" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Aaqil</h5>
+                        <p>Data Scientist</p>
+                        <div class="profile-actions">
+                            <a href="profile15.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 16-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile63.webp" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Kasun</h5>
+                        <p>Electrical and Electronic Engineer</p>
+                        <div class="profile-actions">
+                            <a href="profile16.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 17-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile18.jpg" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Velan</h5>
+                        <p>Junior UI/UX Engineer</p>
+                        <div class="profile-actions">
+                            <a href="profile17.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 18-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile19.avif" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Kathir</h5>
+                        <p>Accountant</p>
+                        <div class="profile-actions">
+                            <a href="profile18.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 19-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile6.avif" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Daniel</h5>
+                        <p>Project Manager</p>
+                        <div class="profile-actions">
+                            <a href="profile19.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 20-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile30.avif" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Aravind</h5>
+                        <p>Financial Analyst</p>
+                        <div class="profile-actions">
+                            <a href="profile20.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 21-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile50.jpg" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Harsha</h5>
+                        <p>Business Development Manager</p>
+                        <div class="profile-actions">
+                            <a href="profile21.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 22-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile51.jpg" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Arjun</h5>
+                        <p>Talent Acquisition Specialist</p>
+                        <div class="profile-actions">
+                            <a href="profile22.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 23-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile53.jpg" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Nathan</h5>
+                        <p>Logistics Coordinator</p>
+                        <div class="profile-actions">
+                            <a href="profile23.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 24-->
+            <div class="col-lg-4 col-md-6">
+                <div class="profile-card" data-gender="male">
+                    <img src="image/profile4.jpg" alt="Jane Smith" class="profile-img">
+                    <div class="profile-info">
+                        <h5>Sandeep</h5>
+                        <p>Business Consultant</p>
+                        <div class="profile-actions">
+                            <a href="profile24.html" class="btn btn-primary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Astro Affinity -->
+            <div class="footer-section">
+                <h3>About Astro Affinity</h3>
+                <p style="color: black;">**Astro Affinity Matrimony** Founded in 2009, Astro Affinity Matrimony has been dedicated to uniting hearts through the wisdom of astrology. Our service blends traditional astrological practices with modern matchmaking techniques to create meaningful and lasting connections. With over a decade of experience, we specialize in crafting soulmate relationships guided by the stars, ensuring compatibility and happiness for every couple.</p>
+            </div>
+    
+            <!-- Working Hours -->
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Monday - Friday</h5>
+                            <p style="color: black">(09:00 AM - 18:00 PM)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Saturday</h5>
+                            <p style="color: black;">(09:00 AM - 13:00 PM)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Sunday</h5>
+                            <p style="color: black;">(Closed)</p>
+                        </div>
+                    </li>
+                    </ul>
+            </div>
+    
+            <!-- Branches -->
+            <div class="footer-section">
+                <h3>Our Branches</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Colombo</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Jaffna</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Trincomalae</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Batticalo</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Negembo</h6>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+    
+            <!-- Contact Information -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Mail Us: </h5>
+                            <p style="color: black">astro-affinity@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Call Us: </h5>
+                            <p style="color: black">+94-112857458</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Visit Us: </h5>
+                            <p style="color: black">No13, Lilly Avenue, Wellawatte, Col-06</p>
+                        </div>
+                    </li>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="profile.html">Profiles</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="t&c.html">Terms and Conditions</a></li>
+                    <li><a href="pp.html">Privacy and Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Astro Affinity Matrimony | All Rights Reserved</p>
+            <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM fully loaded and parsed");
+        // Retrieve session data to check if user is logged in and gender
+        let isLoggedIn = false;
+        let userGender = null;
+
+        console.log("User logged in:", isLoggedIn);
+        console.log("User gender:", userGender);
+
+        // If user is logged in and gender exists, filter profiles
+        if (isLoggedIn === "true" && userGender) {
+            console.log("User is logged in. Gender:", userGender);
+            showOppositeGenderProfiles(userGender); // Show opposite gender profiles
+        } else {
+            console.log("User is not logged in or gender not found.");
+        }
+    });
+
+    // Function to show opposite gender profiles
+    function showOppositeGenderProfiles(userGender) {
+        console.log("Filtering profiles for:", userGender);
+        if (!userGender) {
+            console.log("User gender is not defined.");
+            return;
+        }
+
+        const userGenderLower = userGender.toLowerCase(); // Convert user gender to lowercase
+        const allProfiles = document.querySelectorAll(".profile-card");
+
+        // Loop through all profile cards    
+        allProfiles.forEach(profile => {
+            const profileGender = profile.getAttribute("data-gender")?.toLowerCase(); // Get gender attribute in lowercase
+            if (profileGender) {
+                if (profileGender === userGenderLower) {
+                    profile.style.display = "none"; // Hide same-gender profiles
+                    console.log("Hiding profile with gender:", profileGender);
+                } else {
+                    profile.style.display = "block"; // Show opposite-gender profiles
+                    console.log("Showing profile with gender:", profileGender);
+                }
+            } else {
+                console.log("Profile missing data-gender attribute");
+            }
+        });
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+        const userProfileIcon = document.getElementById("userProfileIcon");
+        const profileModal = document.getElementById("profileModal");
+        const closeModal = document.querySelector(".close");
+
+        userProfileIcon.addEventListener("click", function () {
+            fetch("getUserProfile.php")
+            .then(response => response.json())
+            .then(userData => {
+                document.getElementById("editName").value = userData.name;
+                document.getElementById("editEmail").value = userData.email;
+                document.getElementById("editDob").value = userData.dob;
+                document.getElementById("editHeight").value = userData.height;
+                document.getElementById("editCity").value = userData.current_city;
+                const imageE1 = document.getElementById("profileImage");
+                imageE1.src = userData.photo_url || "default.jpg";
+                profileModal.style.display = "block";
+            });
+        });
+        closeModal.addEventListener("click", function () {
+            profileModal.style.display = "none";
+        });
+        document.getElementById("editProfileForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+            fetch("update_profile.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(response => {
+                if (response.trim() === "success") {
+                    Swal.fire("Profile Updated!", "Your changes have been saved.", "success");
+                    profileModal.style.display = "none";
+            } else {
+                Swal.fire("Error", "Failed to update profile. Try again.", "error");
+            }
+        });
+    });
+});
+</script>    
+</body>    
+</html>

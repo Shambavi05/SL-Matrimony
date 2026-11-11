@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Affinity Matrimony</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+    /*Background body color*/
+    body {
+        background: bisque; /* Deep Red */
+        color: rgb(10, 10, 10);
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+    /* Title Styling Section*/
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #d31818;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        position: relative;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .title::before, .title::after {
+        content: "🕉️";
+        margin: 0 10px;
+    }
+
+    /* Wrapper for Profile */
+    .profile-wrapper{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    /* Profile Container */
+    .profile-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    /* Circular Profile Image with Sunburst */
+    .profile-frame {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-size: cover;
+        border: 10px solid rgb(187, 107, 107);
+        position: relative;
+        box-shadow: 0 0 20px rgba(218, 7, 7, 0.8);
+    }
+
+    /* Circular Profile Image with Sunburst */
+    .profile-frame1 {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-size: cover;
+        border: 10px solid rgb(187, 107, 107);
+        position: relative;
+        box-shadow: 0 0 20px rgba(218, 7, 7, 0.8);
+    }
+
+    /* Sunburst Effect */
+    .sunburst {
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        width: 190px;
+        height: 190px;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Sunburst.svg') no-repeat center;
+        background-size: contain;
+    }
+
+    /* Hanging Lamps Section*/
+    .lamp {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: url('https://cdn-icons-png.flaticon.com/512/2382/2382142.png') no-repeat center;
+        background-size: contain;
+        animation: swing 2s infinite ease-in-out alternate;
+    }
+    /* Hanging Lamps Position left*/
+    .lamp-left-top{
+        top: 50px;
+        left: 10px;
+    }
+    /* Hanging Lamps Position Right*/
+    .lamp-right-top{
+        top: 50px;
+        right: 10px;
+    }
+
+    .lamp1 { top: 20px; left: 10%; }
+    .lamp2 { top: 20px; right: 10%; }
+    .lamp3 { top: 60px; left: 30%; }
+    .lamp4 { top: 60px; right: 30%; }
+
+    /* Swing Animation */
+    @keyframes swing {
+        0% { transform: rotate(-5deg); }
+        100% { transform: rotate(5deg); }
+    }
+
+    /* Info Section */
+    .info {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        margin: 20px auto;
+        border-radius: 10px;
+        max-width: 1000px;
+        height: 650px;
+        box-shadow: 0 0 10px rgba(255, 0, 13, 0.5);
+    }
+
+    .info h2 {
+        color: rgb(255, 0, 106);
+        margin-bottom: 5px;
+    }
+    .info p{
+        font-family: Comic Sans;
+    }
+    .astro {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        margin: 20px auto;
+        border-radius: 10px;
+        max-width: 1000px;
+        height: 800px;
+        box-shadow: 0 0 10px rgba(255, 0, 13, 0.5);
+    }
+    .astro h2 {
+        color: rgb(255, 0, 106);
+        margin-bottom: 5px;
+    }
+    .astro p{
+        font-family: Comic Sans;
+    }
+    .astro-compatibility {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    .astro-compatibility div {
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+    }
+    .astro-compatibility span {
+        flex: 1;
+        text-align: left;
+    }
+    .modal{
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+    }
+    /* Modal content */
+    .modal-content {
+        background-color: beige;
+        padding: 20px;
+        width: 50%;
+        margin: 10% auto;
+        border-radius: 8px;
+        position: relative;
+        text-align: center;
+    }
+    /* Close button */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    /* Detail Button Styling */
+    #viewdetail {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 12px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #viewdetail:hover {
+        background-color: #0056b3;
+    }
+
+    /*Button designs*/
+    .button{
+        display: inline-block;
+        padding: 8px 10px;
+        margin-top: 5px;
+        background-color: burlywood; 
+        color: rgb(12, 12, 12);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+
+    .button:hover{
+        background-color: lightsalmon;
+    }
+
+    .astro-button {
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        cursor: pointer;
+        display: inline-block;
+        margin: 30px 20px;
+        border-radius: 10%;
+        width: 300px;
+        height: 50px;
+        text-align: center;
+    }
+    .astro{
+        display: none;
+    }
+
+    .astro-button {
+            color: black;
+            border: none;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 30px 20px;
+            border-radius: 10%;
+            width: 300px;
+            height: 50px;
+    }
+
+    .astro{
+        display: none;
+    }
+
+    .check-astro-button{
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        cursor: pointer;
+        display: inline-block;
+        margin: 30px 20px;
+        border-radius: 10%;
+        width: 300px;
+        height: 50px;
+    }
+</style>
+</head>
+<body>
+    
+    <!-- Title -->
+    <div class="title">Astro Affinity Matrimony</div>
+    
+    <!-- Adding lamps -->       
+    <div class="lamp lamp-left-top"></div>   
+    <div class="lamp lamp-right-top"></div>   
+    <div class="lamp lamp-right-top"></div>
+
+            
+    <!-- Profile Section 1 -->
+    <div class="profile-wrapper">
+        <div class="profile-container">
+            <div class="profile-frame" style="background: url(image/profile29.jpg) no-repeat center; background-size: cover;"></div>
+        </div>
+    
+        <!-- Profile Section 2 -->
+        <div class="profile-container">
+            <div class="sunburst"></div>
+            <div class="profile-frame1" style="background: no-repeat center; background-size: cover;"></div>
+        </div>
+    </div>
+    
+    <!-- Information Section -->
+    <div class="info">
+        <h2><u>About Me</u></h2>
+        <p>Hello, I’m Nethmini — an AI Engineer with a focused and thoughtful approach to both career and life. I believe in mutual respect, emotional maturity, and the strength of shared values in a successful relationship. Professionally driven and personally grounded, I value clear communication, honesty, and a supportive partnership. I’m looking for someone who is kind-hearted, understanding, and ready to grow together through all phases of life. If you believe in building a meaningful connection based on trust and respect, I look forward to this new beginning.</p>
+        <h2><u>Birth Details</u></h2>
+        <p><strong>Date of Birth:</strong> October 01, 1990</p>
+        <h2><u>Career</u></h2>
+        <p><strong>Profession:</strong> AI Engineer</p>
+        <h2><u>Food Preferences</u></h2>
+        <p><strong>Preference:</strong> Non-Vegetarian</p>
+        <h2><u>Hobbies</u></h2>
+        <p><strong>Interests: </strong>Travelling</p>
+        <h2><u>Contact Details: </u></h2>
+        <p><strong>Mail: </strong>nethmini0110@gmail.com</p>
+        <h2>Astrological Details</h2>
+        <p><strong>Zodiac: </strong><span id="zodiac_sign">Leo - Simmam</span></p>
+        <p><strong>Nakshathira: </strong><span id="nakshathira">Krithika - Karthigai</span></p>
+    </div>
+
+        <!--Check Astro Compatability-->
+        <button id="checkCompatibilityBtn" class="check-astro-button" style="background-color: palevioletred;">🔍 Check Astro Compatibility</button>
+
+        <div id="compatibility" style="margin-top: 10px; font-weight: bold;"></div>
+        
+        <!-- Notification Bell -->
+        <div style="position: absolute; top: 20px; right: 30px;">     
+            <i class="fas fa-bell fa-2x" id="notificationBell" style="cursor: pointer; color: #d31818;"></i>      
+            <span id="notificationCount" style="position: absolute; top: -8px; right: -8px; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px;">4</span>   
+        </div>
+    
+        <!--Send request-->      
+        <button id="sendRequestBtn" class="astro-button" style="background-color: lightcoral;">Send Request</button>
+    
+        <!--Chatting-->        
+        <div id="chatModal" class="modal">
+            <div class="modal-content"> 
+                <span class="close" id="closeChat">&times;</span> 
+                <h2>Chat with Profile</h2> 
+                <div id="chatBox" style="border: 1px solid #ccc; height: 200px; overflow-y: auto; padding: 10px; margin-bottom: 10px;">      
+                    <p><strong>You:</strong> Hi, I’d like to know more about you!</p>
+                </div>  
+                <input type="text" id="chatInput" placeholder="Type a message..." style="width: 80%; padding: 8px;">  
+                <button id="sendChat" class="button" style="margin-left: 10px;">Send</button>
+            </div>
+        </div> 
+    
+
+    <!--Astro Compatability Section-->
+    <div class="astro">
+        <h2><u>Astro Compatability</u></h2>
+        <div class="astro-compatibility">
+            <div><span>Dina Porutham</span> <i class="fas fa-check-circle text-success"></i></div>
+            <a href="#" id="viewDina" style="align-items: right;" class="button">View Details</a>
+            <div><span>Gana Porutham</span> <i class="fas fa-times-circle text-danger"></i></div>
+            <a href="#" id="viewGana" style="align-items: right;" class="button">View Details</a>
+            <div><span>Mahendra Porutham</span> <i class="fas fa-check-circle text-success"></i></div>
+            <a href="#" id="viewMahendra" style="align-items: right;" class="button">View Details</a>
+            <div><span>Sthree Porutham</span> <i class="fas fa-times-circle text-danger"></i></div>
+            <a href="#" id="viewSthree" style="align-items: right;" class="button">View Details</a>
+            <div><span>Yoni Porutham</span> <i class="fas fa-check-circle text-success"></i></div>
+            <a href="#" id="viewYoni" style="align-items: right;" class="button">View Details</a>
+            <div><span>Rasi Porutham</span> <i class="fas fa-times-circle text-danger"></i></div>
+            <a href="#" id="viewRasi" style="align-items: right;" class="button">View Details</a>
+            <div><span>Rasi Adhipadhi Porutham</span> <i class="fas fa-check-circle text-success"></i></div>
+            <a href="#" id="viewRasiAdhipathi" style="align-items: right;" class="button">View Details</a>
+            <div><span>Vasya Porutham</span> <i class="fas fa-times-circle text-danger"></i></div>
+            <a href="#" id="viewVasya" style="align-items: right;" class="button">View Details</a>
+            <div><span>Raju Porutham</span> <i class="fas fa-check-circle text-success"></i></div>
+            <a href="#" id="viewRaju" style="align-items: right;" class="button">View Details</a>
+            <div><span>Vedha Porutham</span> <i class="fas fa-times-circle text-danger"></i></div>
+            <a href="#" id="viewVedha" style="align-items: right;" class="button">View Details</a>
+        </div>
+    </div>
+
+    <!--Modals for Each Porutham-->
+    <div id="modalDina" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Dina Porutham</h2>
+            <p>Dina Porutham indicates health and longevity of the couple. It ensures a prosperous and happy married life.</p>
+        </div>
+    </div>
+    
+    <div id="modalGana" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Gana Porutham</h2>
+            <p>Ensures mental and behavioral compatibility.</p>
+        </div>
+    </div>
+    
+    <div id="modalMahendra" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Mahendra Porutham</h2>
+            <p>Mahendra porutham mainly deals with the progeny and the wealth of the couple</p>
+        </div>
+    </div>
+
+    <div id="modalSthree" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sthree Porutham</h2>
+            <p>Stree deergha porutham ensures the well being and longevity of the female in a marriage. </p>
+        </div>
+    </div>
+
+    <div id="modalYoni" class="modal"> 
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Yoni Porutham</h2>
+            <p>Yoni Porutham is an important porutham as it checks the sexual compatibility between the couple, which is again an important aspect of a married life.</p>
+        </div>
+    </div>
+        
+    <div id="modalRasi" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Rasi Porutham</h2>
+            <p>Rasi Porutham is another important porutham that checks the compatibility of the birth stars based on their moon signs.</p>
+        </div>
+    </div>
+    
+    <div id="modalRasiAdhipathi" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Rasi Adhipadhi Porutham</h2>
+            <p>Rasiyathipati porutham confirms that the birth stars and their lords for each of the boy and the girl should be friendly to each other for the most compatible marriage</p>
+        </div>
+    </div>
+        
+    <div id="modalVasya" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Vasiya Porutham</h2>
+            <p>Vasya porutham analyzes the compatibility of the zodiac signs of both the boy and girl. Compatible zodiac signs affirm love and affection between the partners, which lays down the strong foundation for a happy married life.</p>
+        </div>
+    </div>
+    
+    <div id="modalRaju" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Raju Porutham</h2>
+            <p>Rajju porutham is considered a vital porutham to be assessed as it checks the longevity of a husband in a marriage. A long-lived husband may bring overall happiness to the wife. It is an important factor to be considered while fixing a marriage. Rajju depicts the mangalya bala, or strength, in a marriage. If both the boy and the girl belong to the same birth star, then Rajju dosham occurs and is not considered good for the longevity of the husband. </p>
+        </div>
+    </div>
+
+    <div id="modalVedha" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Vedha Porutham</h2>
+            <p>The vedha porutham affirms removal of any kind of evil and negativity from the life of a married couple.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>    
+    <script>
+    // Function to handle modal visibility
+    function openModal(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = "block";
+
+        var closeBtn = modal.querySelector(".close");
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target === modal) {        
+                modal.style.display = "none";
+            }
+        }
+    }    
+    document.addEventListener("DOMContentLoaded", function () {
+        // Event listeners for each button
+        document.getElementById("viewDina").addEventListener("click", function () {
+            openModal("modalDina");
+        });
+        document.getElementById("viewGana").addEventListener("click", function() {
+            openModal("modalGana");
+        });
+        document.getElementById("viewMahendra").addEventListener("click", function() {
+            openModal("modalMahendra");
+        });
+        document.getElementById("viewSthree").addEventListener("click", function() {
+            openModal("modalSthree");
+        });
+        document.getElementById("viewYoni").addEventListener("click", function() {
+            openModal("modalYoni");
+        });
+        document.getElementById("viewRasi").addEventListener("click", function() {
+            openModal("modalRasi");
+        });
+        document.getElementById("viewRasiAdhipathi").addEventListener("click", function() {
+            openModal("modalRasiAdhipathi");
+        });
+        document.getElementById("viewVasya").addEventListener("click", function() {
+            openModal("modalVasya");
+        });
+        document.getElementById("viewRaju").addEventListener("click", function() {
+            openModal("modalRaju");
+        });
+        document.getElementById("viewVedha").addEventListener("click", function() {
+            openModal("modalVedha");
+        });
+    });
+
+    document.getElementById("notificationBell").addEventListener("click", function () {
+    Swal.fire({
+        title: "Notifications",
+        html: "<ul style='text-align:left;'><li>New request from Anjali</li><li>Match found!</li><li>Astro update available</li></ul>",
+        icon: "info",
+        confirmButtonText: "Okay"
+    });  
+});
+
+const chatModal = document.getElementById("chatModal");
+const chatClose = document.getElementById("closeChat");
+const sendRequestBtn = document.getElementById("sendRequestBtn");
+const sendChatBtn = document.getElementById("sendChat");
+const chatBox = document.getElementById("chatBox");
+const chatInput = document.getElementById("chatInput");
+
+sendRequestBtn.addEventListener("click", () => {
+    Swal.fire({
+        title: "Request Sent!",
+        text: "You can now chat with the profile.",
+        icon: "success",
+        confirmButtonText: "Start Chat"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            chatModal.style.display = "block";
+        }
+    });
+});
+
+chatClose.onclick = () => {
+    chatModal.style.display = "none";
+};
+
+window.onclick = (event) => {
+    if (event.target == chatModal) {
+        chatModal.style.display = "none";
+    }
+
+};
+
+sendChatBtn.addEventListener("click", () => {
+    const message = chatInput.value.trim();
+    if (message) {
+        chatBox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+        chatInput.value = "";
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("checkCompatibilityBtn").addEventListener("click", function () {
+    const profileZodiac = document.getElementById("zodiac_sign").innerText;
+    const profileNakshathira = document.getElementById("nakshathira").innerText;
+
+    loadCompatibility(profileZodiac, profileNakshathira, function(result) {
+      document.getElementById("compatibility").innerText = "Compatibility: " + result;
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const profileDiv = document.querySelector(".profile-frame1");
+
+    fetch("getUserProfile.php")
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.photo_url) {
+                profileDiv.style.background = `url('${data.photo_url}') no-repeat center`;
+                profileDiv.style.backgroundSize = "cover";
+            } else {
+                profileDiv.style.background = `url('images/default.jpg') no-repeat center`;
+                profileDiv.style.backgroundSize = "cover";
+            }
+        })
+        .catch(error => {
+            console.error("Failed to load profile image", error);
+            profileDiv.style.background = `url('images/default.jpg') no-repeat center`;
+            profileDiv.style.backgroundSize = "cover";
+        });
+});
+</script>
+</body>
+</html>

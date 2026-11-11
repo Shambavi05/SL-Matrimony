@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; 
+        }
+        .loader {
+            text-align: center;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 0, 128, 0.3);
+            border-top: 5px solid rgba(255, 0, 128, 1);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        /* Spinner Animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        body.loaded #preloader {
+            display: none;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h2 {
+            position: relative;
+            z-index: 1; 
+        }
+        
+        @keyframes fadeSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        </style>
+        </head>
+        <body>
+            
+            <!-- Preloader -->
+             <div id="preloader">
+                <div class="loader">
+                    <div class="spinner"></div>
+                    <p>Loading...</p>
+                </div>
+            </div>
+
+            <!--Nav Bar-->
+            <div class="nav-container">
+                <div class="nav">
+                    <div class="logo">
+                        <i class="fas fa-heart" style="color: red;"></i><span class="site-name" style="font-family: Comic San; text-align: left;" >Astro Affinity Matrimony</span>
+                    </div>
+                    <a href="index.html">Home</a>
+                    <a href="packages.html">Packages</a>
+                    <a href="register.html"class="active">Register</a>
+                    <a href="profile.html">Profiles</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#" id="loginBtn">Login</a>
+                    <a href="#" id="logoutBtn" style="display: none;">Logout</a>
+                    <a href="#" id="userProfileIcon" class="user-icon" role="button" aria-label="User Profile">
+                        <i class="fas fa-user user-icon"></i>
+                    </a>
+                </div> 
+            </div>
+
+            <div id="profileModal" class="modal">
+                <div class="modal-content1">
+                    <span class="close">&times;</span>
+                    <h2>User Profile</h2>
+                    <form id="editProfileForm">
+                        <img id="profileImage" src="default.jpg" alt="User Photo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+
+                        <label for="editName">Name:</label>
+                        <input type="text" id="editName" name="name">
+            
+                        <label for="editEmail">Email:</label>
+                        <input type="email" id="editEmail" name="email" readonly>
+            
+                        <label for="editDob">Date of Birth:</label>
+                        <input type="date" id="editDob" name="dob">
+            
+                        <label for="editHeight">Height:</label>
+                        <input type="text" id="editHeight" name="height">
+            
+                        <label for="editCity">Current City:</label>
+                        <input type="text" id="editCity" name="current_city">
+            
+                        <button type="submit">Edit Details</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Login Modal -->
+             <div id="loginModal" class="modal">
+                <div class="modal-content" style="background-color: bisque;">
+                    <span class="close" id="closeLogin">&times;</span>
+                    <h2>Login</h2>
+                    <form id="loginForm" action="login.php" method="POST">
+                        <label for="loginEmail">Email Address:</label>
+                        <input type="email" id="loginEmail" name="email" required>
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                        <strong><a href="#" id="forgotPasswordLink">Forgot Password?</a></strong>
+                        
+                        <!--New User Registration Link-->
+                        <p>
+                            <strong>If You Are New User?
+                                <a href="register.html" id="newUserLinkaid">Register Here!!!</a>
+                            </strong>
+                        </p>
+                        
+                        <div style="margin-top: 10px;">
+                            <input type="checkbox" id="termsCheckbox" required>
+                            <label for="termsCheckbox">
+                                I agree to the <a href="t&c.html" target="_blank" style="color: black;">Terms and Conditions</a>
+                                <a href="pp.html" target="_blank" style="color: black;">Privacy Policy</a>
+                            </label>
+                        </div>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <!-- Forgot Password Modal -->
+            <div id ="resetPasswordModal" class="modal">
+                <div class="modal-content" style="background-color: bisque;">
+                    <span class="close" id="closeResetPassword">&times;</span>
+                    <h2>Lets Reset Your Password!!</h2>
+                    <form id="resetPasswordForm">
+                        <label for="resetEmail">Enter Your Email:</label>
+                        <input type="email" id="resetEmail" name="email" required>
+                        <label for="resetPassword">Enter Your New Password:</label>
+                        <input type="password" id="resetPassword" name="resetPassword" required>
+                        <label for="confirmPassword">Confirm Your Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <button type="submit">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+            
+            
+            <!--Body Section-->
+            <div class="header-section" style="margin-top: 60px;">
+                <h2>Let's complete Your Profile</h2>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> / <span>Pages</span> / <a href="register.html">Register</a>
+                </div>
+            </div>
+            
+            <div class="container" style="margin-top: 10px; background-color: antiquewhite; width: 200%;">
+                <h2 style="font-size: 25px;">Register Your Profile</h2>
+                <form id="registrationForm" action="customer_register.php" method="POST">
+                    <h3 style="font-size: 23px;">Personal Information</h3>
+                    <br>
+
+            <!--Personal Information--> 
+            <div class="mb-3">
+                <label for="profile">Profile For: </label>
+                <select id="profile" name="profile" class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option value="Myself">My Self</option>
+                    <option value="Daughter">Daughter</option>
+                    <option value="Son">Son</option>
+                    <option value="Friend">Friend</option>
+                    <option value="Relative">Relative</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="gender">Gender: </label>
+                <select id="gender" name="gender" class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="photo">Upload Photo: </label>
+                <input type="file" id="photo" name="photo" class="form-control" accept="image/*" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email">Enter your Mail Address</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your mail address" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password">Enter your Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" minlength="8" required>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="name">Bride/Groom Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="maritalStatus">Marital Status</label>
+                <select id="maritalStatus" name="marital_status" class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option value="Unmarried">Unmarried</option>
+                    <option value="Widow(er)">Widow(er)</option>
+                    <option value="Divorced">Divorced</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" id="dob" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="birth_time">Birth Time</label>
+                <input type="time" name="birth_time" id="birth_time" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="height" class="form-label">Height</label>
+                <input type="text" name="height" id="height" class="form-control" placeholder="Enter your height (e.g., 5'6\")" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="religion" class="form-label">Religion</label>
+                <select id="religion" name="religion" class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Buddhist">Buddhist</option>
+                    <option value="Muslim">Muslim</option>
+                    <option value="Christian">Christian</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="motherTongue" class="form-label">Mother Tongue</label>
+                <select id="motherTongue" name ="mother_tongue" class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Sinhala">Sinhala</option>
+                    <option value="English">English</option>
+                    <option value="Malay">Malay</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for ="hobbies" class="form-label">Hobbies</label>
+                <input type="text" name = "hobbies" id="email" class="form-control" placeholder="Enter your hobbies" required>
+             </div>
+             <div class="mb-3">
+                <label for=foodPreferences" class="form-label">Food Preferences</label>
+                <select id="foodPreferences" name="food_preferences"class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Both">Both</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="zodiacSigns" class="form-label">Zodiac Signs</label>
+                <select id="zodiacSigns" name ="zodiac_sign" class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option>Aries - Mesham</option>
+                    <option>Taurus - Rishabam</option>
+                    <option>Gemini - Midhunam</option>
+                    <option>Cancer - Kadagam</option>
+                    <option>Leo - Simmam</option>
+                    <option>Libra - Thulam</option>
+                    <option>Virgo - Kanni</option>
+                    <option>Scorpio - Virushigam</option>
+                    <option>Sagittarius - Dhanusu</option>
+                    <option>Capicorn - Magaram</option>
+                    <option>Aquarius - Kumbam</option>
+                    <option>Pisces - Meenam</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="nakshathira" class="form-label">Nakshathiras</label>
+                <select id="nakshathira" name ="nakshathira" class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option>Ashvini - Aswini</option>
+                    <option>Bharani - Bharani</option>
+                    <option>Krithika - Karthigai</option>
+                    <option>Rohini - Rohini</option>
+                    <option>Mrigashira - Mrigasheersham</option>
+                    <option>Ardra - Thiruadhirai</option>
+                    <option>Punarvasu - Punarpoosam</option>
+                    <option>Pushya - Poosam</option>
+                    <option>Ashlesha - Aayilyam</option>
+                    <option>Magha - Magam</option>
+                    <option>Purva Palguni - Pooram</option>
+                    <option>Uttara Palguni - Uthiram</option>
+                    <option>Hasta - Hastam</option>
+                    <option>Chithra - Chithirai</option>
+                    <option>Swathi - Swathi</option>
+                    <option>Vishakha - Vishakam</option>
+                    <option>Annuradha - Anusham</option>
+                    <option>Jyeshtha - Kettai</option>
+                    <option>Mula - Moolam</option>
+                    <option>Purva Ashadha - Pooradam</option>
+                    <option>Uttara Ashadha - Uthiradam</option>
+                    <option>Shravana - Thiruvonam</option>
+                    <option>Dhanishtha - Avittam</option>
+                    <option>Shatabisha - Chadhayam</option>
+                    <option>Purvva Bhadrapada - Pooratadhi</option>
+                    <option>Uttara Bhadrapada - Uthirattathi</option>
+                    <option>Revati - Revathi</option>
+                </select>
+            </div>
+            
+            <!-- Location Information -->
+             <div class="mb-4" style="font-size: 23px;">
+                <h3 class="text-left mb-4" style="font-family: Cormorant Garamond;">Location Information</h3>
+            </div>
+
+            <div class="mb-3">
+                <label for="currentCity" class="form-label">Currently Living in: </label>
+                <input type="text" name ="current_city" id="currentCity" class="form-control" placeholder="Enter your current city" required>
+            </div>
+            <div class="mb-3">
+                <label for="residecyState" class="form-label">Residency State</label>
+                <select id="residecyState" name="residency_state" class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option>Central</option>
+                    <option>Eastern</option>
+                    <option>North Central</option>
+                    <option>Northern</option>
+                    <option>Northern Western</option>
+                    <option>Southern</option>
+                    <option>Sabaragamua</option>
+                    <option>Uwa</option>
+                    <option>Western</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="citizenship" class="form-label">Citizenship</label>
+                <input type="text" id="citizenship" name ="citizenship" class="form-control" placeholder="Enter your citizenship" required>
+            </div>
+            <div class="mb-3">
+                <label for="residencyStatus" class="form-label">Residency Status</label>
+                <select id="residencyStatus" name ="residency_status" class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option>Permanent Resident</option>
+                    <option>Work Permit</option>
+                    <option>Student Visa</option>
+                    <option>Temporary Visa</option>
+                </select>
+            </div>
+
+            <!-- Education and Employment -->
+            <div class="mb-4" style="font-size: 23px;">
+                <h3 class="text-left mb-4" style="font-family: Cormorant Garamond;">Education Information</h3>
+            </div>
+            <div class="mb-3">
+                <label for="higherEducation" class="form-label">Higher Education</label>
+                <select id="higherEducation" name ="higher_education" class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option>Ph.D</option>
+                    <option>Bachelors</option>
+                    <option>Civil Services</option>
+                    <option>Professional Certificaties</option>
+                    <option>Diploma</option>
+                    <option>Higher Secondary or Secondary</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="employment" class="form-label">Employment Status</label>
+                <select id="employment" name = "employment_status" class="form-select" required>
+                    <option value="">---Select---</option>
+                    <option>Government</option>
+                    <option>Defence</option>
+                    <option>Private</option>
+                    <option>Business</option>
+                    <option>Not Working</option>
+                </select>
+            </div>
+
+            <!-- Short Description -->
+            <div class="mb-4" style="font-size: 23px;">
+                <h3 class="text-left mb-4" style="font-family: Cormorant Garamond;">About You</h3>
+            </div>
+            <div class="mb-3">
+                <label for="shortDescription" class="form-label">Short Description</label>
+                <textarea id="shortDescription" name =" short_description" class="form-control" rows="3" placeholder="Describe yourself in a few lines" required></textarea>
+            </div>
+            <br>
+            <br>
+
+            <button type="submit" class="btn-primary">Register Now</button>
+        </form>
+    </div>
+    
+    <!--Footer Section-->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Astro Affinity</h3>
+                <p style="color: black;">**Astro Affinity Matrimony** Founded in 2009, Astro Affinity Matrimony has been dedicated to uniting hearts through the wisdom of astrology. Our service blends traditional astrological practices with modern matchmaking techniques to create meaningful and lasting connections. With over a decade of experience, we specialize in crafting soulmate relationships guided by the stars, ensuring compatibility and happiness for every couple.</p>
+            </div>
+    
+            <!-- Working Hours -->
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Monday - Friday</h5>
+                            <p style="color: black">(09:00 AM - 18:00 PM)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Saturday</h5>
+                            <p style="color: black;">(09:00 AM - 13:00 PM)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Sunday</h5>
+                            <p style="color: black;">(Closed)</p>
+                        </div>
+                    </li>
+                    </ul>
+            </div>
+    
+            <!-- Branches -->
+            <div class="footer-section">
+                <h3>Our Branches</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Colombo</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Jaffna</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Trincomalae</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Batticalo</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Negembo</h6>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+    
+            <!-- Contact Information -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Mail Us: </h5>
+                            <p style="color: black">astro-affinity@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Call Us: </h5>
+                            <p style="color: black">+94-112857458</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Visit Us: </h5>
+                            <p style="color: black">No13, Lilly Avenue, Wellawatte, Col-06</p>
+                        </div>
+                    </li>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="profile.html">Profiles</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="t&c.html">Terms and Conditions</a></li>
+                    <li><a href="pp.html">Privacy and Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Astro Affinity Matrimony | All Rights Reserved</p>
+            <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const userProfileIcon = document.getElementById("userProfileIcon");
+        const profileModal = document.getElementById("profileModal");
+        const closeModal = document.querySelector(".close");
+
+        userProfileIcon.addEventListener("click", function () {
+            fetch("getUserProfile.php")
+            .then(response => response.json())
+            .then(userData => {
+                document.getElementById("editName").value = userData.name;
+                document.getElementById("editEmail").value = userData.email;
+                document.getElementById("editDob").value = userData.dob;
+                document.getElementById("editHeight").value = userData.height;
+                document.getElementById("editCity").value = userData.current_city;
+                const imageE1 = document.getElementById("profileImage");
+                imageE1.src = userData.photo_url || "default.jpg";
+                profileModal.style.display = "block";
+            });
+        });
+        closeModal.addEventListener("click", function () {
+            profileModal.style.display = "none";
+        });
+        document.getElementById("editProfileForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+            fetch("update_profile.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(response => {
+                if (response.trim() === "success") {
+                    Swal.fire("Profile Updated!", "Your changes have been saved.", "success");
+                    profileModal.style.display = "none";
+            } else {
+                Swal.fire("Error", "Failed to update profile. Try again.", "error");
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

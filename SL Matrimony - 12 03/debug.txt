@@ -1,0 +1,374 @@
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Aquarius - Kumbam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Uttara Ashadha - Uthiradam","nakshathira":"Shatabisha - Chadhayam"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Uttara Ashadha - Uthiradam
+Received JSON: {"zodiac":"Uttara Ashadha - Uthiradam","nakshathira":"Shatabisha - Chadhayam"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Uttara Ashadha - Uthiradam
+Received JSON: {"zodiac":"Uttara Ashadha - Uthiradam","nakshathira":"Shatabisha - Chadhayam"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Uttara Ashadha - Uthiradam
+Received JSON: {"zodiac":"Uttara Ashadha - Uthiradam","nakshathira":"Shatabisha - Chadhayam"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Uttara Ashadha - Uthiradam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Uttara Ashadha - Uthiradam","nakshathira":"Shatabisha - Chadhayam"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Uttara Ashadha - Uthiradam
+Received JSON: {"zodiac":"Libra - Thulam","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Libra - Thulam
+Received JSON: {"zodiac":"Aquarius - Kumbam","nakshathira":"Ashlesha - Aayilyam"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Aquarius - Kumbam
+Received JSON: {"zodiac":"Aquarius - Kumbam","nakshathira":"Ashlesha - Aayilyam"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Aquarius - Kumbam
+Received JSON: {"zodiac":"Aquarius - Kumbam","nakshathira":"Vishakha - Vishakam"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Aquarius - Kumbam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uttara Ashadha - Uthiradam"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Aquarius - Kumbam","nakshathira":"Bharani - Bharani"}
+Session Zodiac: Taurus - Rishabam, Target Zodiac: Aquarius - Kumbam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Gemini - Midhunam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Sagittarius - Dhanusu","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Sagittarius - Dhanusu
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uttara Ashadha - Uthiradam"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Taurus - Rishabam","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Taurus - Rishabam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Mrigashira - Mrigasheersham"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Aquarius - Kumbam","nakshathira":"Bharani - Bharani"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Aquarius - Kumbam
+Received JSON: {"zodiac":"Gemini - Midhunam","nakshathira":"Revati - Revathi"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Gemini - Midhunam
+Received JSON: {"zodiac":"Libra - Thulam","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Libra - Thulam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Mrigashira - Mrigasheersham"}
+Session Zodiac: Capicorn - Magaram, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Pisces - Meenam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Pisces - Meenam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Sagittarius - Dhanusu","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Cancer - Kadagam, Target Zodiac: Sagittarius - Dhanusu
+Received JSON: {"zodiac":"Sagittarius - Dhanusu","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Cancer - Kadagam, Target Zodiac: Sagittarius - Dhanusu
+Received JSON: {"zodiac":"Sagittarius - Dhanusu","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Cancer - Kadagam, Target Zodiac: Sagittarius - Dhanusu
+Received JSON: {"zodiac":"Sagittarius - Dhanusu","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Cancer - Kadagam, Target Zodiac: Sagittarius - Dhanusu
+Received JSON: {"zodiac":"Sagittarius - Dhanusu","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Cancer - Kadagam, Target Zodiac: Sagittarius - Dhanusu
+Received JSON: {"zodiac":"Sagittarius - Dhanusu","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Cancer - Kadagam, Target Zodiac: Sagittarius - Dhanusu
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Pisces - Meenam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Pisces - Meenam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Pisces - Meenam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Annuradha - Anusham"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Uttara Ashadha - Uthiradam","nakshathira":"Shatabisha - Chadhayam"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Uttara Ashadha - Uthiradam
+Received JSON: {"zodiac":"Libra - Thulam","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Libra - Thulam
+Received JSON: {"zodiac":"Aquarius - Kumbam","nakshathira":"Vishakha - Vishakam"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Aquarius - Kumbam
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Vishakha - Vishakam"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Vishakha - Vishakam"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Annuradha - Anusham"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Annuradha - Anusham"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Annuradha - Anusham"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Annuradha - Anusham"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Uttara Ashadha - Uthiradam","nakshathira":"Shatabisha - Chadhayam"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Uttara Ashadha - Uthiradam
+Received JSON: {"zodiac":"Libra - Thulam","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Libra - Thulam
+Received JSON: {"zodiac":"Aquarius - Kumbam","nakshathira":"Vishakha - Vishakam"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Aquarius - Kumbam
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Vishakha - Vishakam"}
+Session Zodiac: Aries - Mesham, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Annuradha - Anusham"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Uttara Ashadha - Uthiradam","nakshathira":"Shatabisha - Chadhayam"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Uttara Ashadha - Uthiradam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Krithika - Karthigai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Aquarius - Kumbam","nakshathira":"Ashlesha - Aayilyam"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Aquarius - Kumbam
+Received JSON: {"zodiac":"Libra - Thulam","nakshathira":"Purva Palguni - Pooram"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Libra - Thulam
+Received JSON: {"zodiac":"Libra - Thulam","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Libra - Thulam
+Received JSON: {"zodiac":"Aquarius - Kumbam","nakshathira":"Vishakha - Vishakam"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Aquarius - Kumbam
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Vishakha - Vishakam"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Ardra - Thiruadhirai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Uthiram - Uttara Phalguni"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Annuradha - Anusham"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Uttara Ashadha - Uthiradam","nakshathira":"Shatabisha - Chadhayam"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Uttara Ashadha - Uthiradam
+Received JSON: {"zodiac":"Leo - Simmam","nakshathira":"Krithika - Karthigai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Leo - Simmam
+Received JSON: {"zodiac":"Aquarius - Kumbam","nakshathira":"Ashlesha - Aayilyam"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Aquarius - Kumbam
+Received JSON: {"zodiac":"Libra - Thulam","nakshathira":"Purva Palguni - Pooram"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Libra - Thulam
+Received JSON: {"zodiac":"Libra - Thulam","nakshathira":"Chithra - Chithirai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Libra - Thulam
+Received JSON: {"zodiac":"Aquarius - Kumbam","nakshathira":"Vishakha - Vishakam"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Aquarius - Kumbam
+Received JSON: {"zodiac":"Cancer - Kadagam","nakshathira":"Vishakha - Vishakam"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Cancer - Kadagam
+Received JSON: {"zodiac":"Scorpio - Virushigam","nakshathira":"Jyeshtha - Kettai"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Scorpio - Virushigam
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Virgo - Kanni
+Received JSON: {"zodiac":"Virgo - Kanni","nakshathira":"Rohini - Rohini"}
+Session Zodiac: Leo - Simmam, Target Zodiac: Virgo - Kanni

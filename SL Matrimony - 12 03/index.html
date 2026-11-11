@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Affinity Matrimony</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <!--Nav Bar-->
+    <div class="nav-container">
+        <div class="nav">
+            <div class="logo">
+                <i class="fas fa-heart" style="color: red;"></i><span class="site-name" style="font-family: Comic San; text-align: left;">Astro Affinity Matrimony</span>
+            </div>
+            <a href="index.html" class="active">Home</a>
+            <a href="packages.html">Packages</a>
+            <a href="profile.html">Profiles</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="#" id="loginBtn">Login</a>
+            <a href="#" id="logoutBtn" style="display: none;">Logout</a>
+            <a href="#" id="userProfileIcon" class="user-icon" role="button" aria-label="User Profile">
+                <i class="fas fa-user user-icon"></i>
+            </a>
+        </div>
+    </div>
+
+    <div id="profileModal" class="modal">
+        <div class="modal-content1">
+            <span class="close">&times;</span>
+            <h2>User Profile</h2>
+            <form id="editProfileForm">
+                <img id="profileImage" src="default.jpg" alt="User Photo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+
+                <label for="editName">Name:</label>
+                <input type="text" id="editName" name="name">
+    
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail" name="email" readonly>
+    
+                <label for="editDob">Date of Birth:</label>
+                <input type="date" id="editDob" name="dob">
+    
+                <label for="editHeight">Height:</label>
+                <input type="text" id="editHeight" name="height">
+    
+                <label for="editCity">Current City:</label>
+                <input type="text" id="editCity" name="current_city">
+    
+                <button type="submit">Edit Details</button>
+            </form>
+        </div>
+    </div>
+    
+
+    <!--Header Section-->    
+    <header>
+        <div class="overlay">
+            <div class="header-content" style="font-family: Comic Sans; font-size: 35px;">
+                <marquee behavior="alternate" direction="left">
+                    <i class="fas fa-heart" style="color: red;"></i>Astro Affinity Matrimony - "Find Your Perfect Match in Sri Lanka". <i class="fas fa-heart" style="color: red;"></i>
+                </marquee>
+            </div>            
+        </header>
+
+    
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal" >
+            <div class="modal-content" style="background-color: bisque;">
+                <span class="close" id="closeLogin">&times;</span>
+                <h2>Login</h2>
+                <form id="loginForm" action="login.php" method="POST">
+                    <label for="loginEmail">Email Address:</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                    <label for="loginPassword">Password:</label>
+                    <!--Forget Password Link-->
+                    <input type="password" id="loginPassword" name="password" required>
+                    <strong><a href="#" id="forgotPasswordLink">Forgot Password?</a></strong>
+                    <!--New User Registration Link-->
+                    <p>
+                        <strong>If You Are New User?
+                            <a href="register.html" id="newUserLinkaid">Register Here!!!</a>
+                        </strong>
+                    </p>
+                    <!--Privacy Policy and Terms and Conditions Box-->
+                    <div style="margin-top: 10px; align-items: center; justify-content: center; gap: 8px;">
+                        <input type="checkbox" id="termsCheckbox"  required>
+                        <label for="termsCheckbox" style="margin: 0;">
+                            I agree to the 
+                            <a href="t&c.html" target="_blank" style="color: black; text-align: center;">Terms and Conditions</a>
+                            and
+                            <a href="pp.html" target="_blank" style="color: black;">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <br>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Forgot Password Modal -->
+        <div id ="resetPasswordModal" class="modal">
+            <div class="modal-content" style="background-color: bisque;">
+                <span class="close" id="closeResetPassword">&times;</span>
+                <h2>Lets Reset Your Password!!</h2>
+                <form id="resetPasswordForm">
+                    <label for="resetEmail">Enter Your Email:</label>
+                    <input type="email" id="resetEmail" name="email" required>
+                    <label for="resetPassword">Enter Your New Password:</label>
+                    <input type="password" id="resetPassword" name="resetPassword" required>
+                    <label for="confirmPassword">Confirm Your Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <button type="submit">Reset Password</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Home Start -->
+         <div class="container-fluid feature py-5" style="background-color:bisque;">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                    <h1 class="display-5 text-capitalize mb-3" style="font-family: Comic sans-serif;">Zodiac Harmony<span class="text-primary">For Soulmates</span></h1>
+                    <p class="mb-0" style="font-family: cursive;font-size: 15px;"> Unlock the power of celestial alignment with our Zodiac Harmony service. By analyzing your astrological charts, we help you find a soulmate whose energies resonate perfectly with yours. With the guidance of the stars, discover deep compatibility, shared values, and a harmonious connection that is destined to last a lifetime.
+                    </p>
+                </div>
+                <div class="row g-4 align-items-center">
+                    <div class="col-xl-4">
+                        <div class="row gy-4 gx-0">
+                            <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <span class="fab fa-galactic-republic fa-2x"></span>
+                                    </div>
+                                    <div class="ms-4">
+                                        <h5 class="mb-3" style="font-family: Comic Sans;">24/7 Detailed Horoscope Guidance</h5>
+                                        <p class="mb-0">Our matrimony service offers 24/7 horoscope guidance to ensure you receive timely astrological insights and support whenever you need it. Our expert astrologers are always available to answer your queries and provide clarity on your potential matches, helping you make informed decisions guided by the stars.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <span class="fa fa-download fa-2x"></span>
+                                    </div>
+                                    <div class="ms-4">
+                                        <h5 class="mb-3" style="font-family: Comic Sans;">Free Horoscope Download for Couples</h5>
+                                        <p class="mb-0">Discover your compatibility at no cost! We offer free horoscope downloads for couples, providing you with a detailed astrological analysis to understand your strengths, challenges, and the cosmic energy connecting you. Our easy-to-download reports are designed to help you and your partner gain deeper insights into your relationship.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-lg-12 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <img src="image/image5.avif" class="img-fluid w-100" style="object-fit: cover;" alt="Img">
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="row gy-4 gx-0">
+                            <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="feature-item justify-content-end">
+                                    <div class="feature-icon">
+                                        <span class="fa fa-heart fa-2x"></span>
+                                    </div>
+                                    <h5 class="mb-3" style="font-family: Comic Sans;">Quality Matches with Infinite Happiness</h5>
+                                    <p class="mb-0">
+                                        We are dedicated to bringing you quality matches that promise infinite happiness. 
+                                        By combining traditional matchmaking methods with modern technology, we carefully 
+                                        curate profiles that align with your values, preferences, and astrological signs. 
+                                        Your journey to everlasting joy begins with a match made in the heavens.
+                                    </p>
+                                </div>                             
+                            </div>
+                            <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="feature-item justify-content-end">
+                                    <div class="feature-icon">
+                                        <span class="fa fa-search fa-2x"></span>
+                                    </div>
+                                    <h5 class="mb-3" style="font-family: Comic Sans;">Seamless Partner Search</h5>
+                                    <p class="mb-0">Our seamless partner search feature ensures that finding your perfect match is both smooth and enjoyable. With intuitive filters, personalized recommendations, and an easy-to-navigate platform, you can effortlessly connect with potential partners who share your aspirations and complement your zodiac sign, making the search for your soulmate a delightful experience
+                                    </p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Home End -->
+ 
+<!-- About Start -->
+<div class="container-fluid overflow-hidden about py-5" style="background-color: antiquewhite;">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="about-item">
+                    <div class="pb-5">
+                        <h1 class="display-5 text-capitalize" style="font-family: Comic sans-serif;">About <span class="text-primary">Astro-Affinity</span></h1>
+                        <p class="mb-0">**Astro Affinity Matrimony**  
+                            Founded in 2009, Astro Affinity Matrimony has been dedicated to uniting hearts through the wisdom of astrology. Our service blends traditional astrological practices with modern matchmaking techniques to create meaningful and lasting connections. With over a decade of experience, we specialize in crafting soulmate relationships guided by the stars, ensuring compatibility and happiness for every couple.
+                        </p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="about-item-inner border p-4">
+                                <div class="about-icon mb-4">
+                                    <img src="image/about-icon-1.png" class="img-fluid w-50 h-50" alt="Icon">
+                                </div>
+                                <h5 class="mb-3" style="font-family: Comic sans-serif;">Our Vision</h5>
+                                <p class="mb-0">To be the world’s most trusted and preferred astrology-based matrimony service, fostering meaningful and harmonious relationships by aligning soulmates through the wisdom of the stars and promoting lasting happiness and compatibility.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-item-inner border p-4">
+                                <div class="about-icon mb-4">
+                                    <img src="image/about-icon-2.png" class="img-fluid h-50 w-50" alt="Icon">
+                                </div>
+                                <h5 class="mb-3"  style="font-family: Comic sans-serif;">Our Mission</h5>
+                                <p class="mb-0">Empowering individuals to find true love through trusted horoscope-based matchmaking, blending traditional astrology with modern technology for personalized partner searches, fostering meaningful connections and lifelong relationships.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-lg-7">
+                        <div class="d-flex align-items-center">
+                            <img src="image/founder.jpg" class="img-fluid rounded-circle border border-4 border-secondary" style="width: 130px; height: 100px;" alt="Image">
+                            <div class="ms-4">
+                                <h4>Lakshmi Sundararajan</h4>
+                                <p class="mb-0">Astro-Affinity founder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+                <div class="about-img">
+                    <div class="img-1">
+                        <img src="image/review 1.avif" class="img-fluid rounded h-100 w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!-- Fact Counter -->
+<div class="container-fluid counter py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-6 col-xl-3" data-wow-delay="0.1s">
+                <div class="counter-item text-center">
+                    <div class="red-shape"></div>
+                    <div class="counter-item-icon mx-auto">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="counter-counting my-3">
+                        <span class="text-white fs-2 fw-bold counter-up" data-target = "500">500</span>
+                        <span class="h1 fw-bold text-white">+</span>
+                    </div>
+                    <h4 class="text-white mb-0">Happy Couples</h4>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3" data-wow-delay="0.3s">
+                <div class="counter-item text-center">
+                    <div class="red-shape"></div>
+                    <div class="counter-item-icon mx-auto">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="counter-counting my-3">
+                        <span class="text-white fs-2 fw-bold counter-up" data-target = "16">16</span>
+                        <span class="h1 fw-bold text-white">+</span>
+                    </div>
+                    <h4 class="text-white mb-0">Year Experiences</h4>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3" data-wow-delay="0.5s">
+                <div class="counter-item text-center">
+                    <div class="red-shape"></div>
+                    <div class="counter-item-icon mx-auto">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                    <div class="counter-counting my-3">
+                        <span class="text-white fs-2 fw-bold counter-up" data-target = "100">100</span>
+                        <span class="h1 fw-bold text-white">%</span>
+                    </div>
+                    <h4 class="text-white mb-0">Mobile Verified</h4>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3" data-wow-delay="0.7s">
+                <div class="counter-item text-center">
+                    <div class="red-shape"></div>
+                    <div class="counter-item-icon mx-auto">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="counter-counting my-3">
+                        <span class="text-white fs-2 fw-bold counter-up" data-target = "100">100</span>
+                        <span class="h1 fw-bold text-white">%</span>
+                    </div>
+                    <h4 class="text-white mb-0">Fully Secured</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of the Fact Counter -->
+
+<!--Our clients-->
+<div class="container-fluid categories py-5" style="background-color: antiquewhite;">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h1 class="display-5 text-capitalize mb-3" style="font-family: Comic Sans;">Our <span class="text-primary" style="font-family: Comic Sans;">Happy Couples</span></h1>
+            <p class="mb-0">"Our platform is dedicated to creating meaningful connections. With a high success rate and many verified matches, we take pride in bringing together individuals based on compatibility and shared values. Explore real-life success stories and discover how our platform has helped many find their perfect match."
+            </p>
+        </div>
+        <!-- Marquee for Continuous Horizontal Scrolling -->
+        <div class="scroll-container">
+            <div class="scroll-content">
+                <div class="categories-item">
+                    <img src="image/couple7.jpg" alt="">
+                    <h4>Rohan ❤️ Nadeesha</h4>
+                    <p>Weds On: 04/11/24 | Sri Lanka </p>
+                </div>  
+
+                <div class="categories-item">
+                    <img src="image/couple5.jpg" alt="">
+                    <h4>John ❤️ Mary</h4>
+                    <p>Weds On: 14/11/24 | Sri Lanka </p>
+                </div>
+        
+                <div class="categories-item">
+                    <img src="image/couple1.avif" alt="">
+                    <h4>Vignesh ❤️ Anitha</h4>
+                    <p>Weds On: 04/11/24 | Sri Lanka </p>
+                </div>
+            
+                <div class="categories-item">    
+                    <img src="image/couple4.avif" alt="">
+                    <h4>Pradeep ❤️ Anika</h4>
+                    <p>Weds On: 04/11/24 | Sri Lanka </p>
+                </div>
+            
+                <div class="categories-item">    
+                    <img src="image/couple2.jpg" alt="">
+                    <h4>Ahmed ❤️ Fatima</h4>
+                    <p>Weds On: 14/12/24 | Sri Lanka </p>
+                </div>
+                
+                <div class="categories-item">    
+                    <img src="image/couple7.jpg" alt="">
+                    <h4>Rohan ❤️ Nadeesha</h4>
+                    <p>Weds On: 04/11/24 | Sri Lanka </p>
+                </div>
+            
+                <div class="categories-item">    
+                    <img src="image/couple5.jpg" alt="">
+                    <h4>John ❤️ Mary</h4>
+                    <p>>Weds On: 14/11/24 | Sri Lanka </p>
+                </div>
+            
+                <div class="categories-item">    
+                    <img src="image/couple1.avif" alt="">
+                    <h4>John ❤️ Anitha</h4>
+                    <p>Weds On: 10:00 AM | Sri Lanka </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Clients Reviews-->
+    <div class="container-fluid categories py-5" style="background-color: wheat;">
+        <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="display-5 text-capitalize mb-3" style="font-family: Comic Sans;">Our <span class="text-primary" style="font-family: Comic Sans;">Client Reviews</span></h1>
+                <p class="mb-0">Our clients’ feedback speaks volumes about the quality of our services. We take pride in the positive experiences shared by individuals who have found their perfect match through Astro Affinity. Each review highlights our commitment to personalized matchmaking, astrological compatibility, and exceptional customer support.
+                </p>
+            </div>
+
+            <div class="scroll-container">        
+                <div class="scroll-content">
+                    <div class="categories-item">
+                        <img src="image/client 1.png" alt="">
+                        <h4>Mr. Arun & Mrs. Shanika</h4>
+                        <blockquote>“Best guidance from Astro Affinity!”</blockquote>
+                    </div>
+            
+                    <div class="categories-item">        
+                        <img src="image/client 2.webp" alt="">
+                        <h4>Mr. Roshan & Mrs. Amira</h4>
+                        <blockquote>“We received accurate insights!!!"</blockquote>
+                    </div>
+            
+                    <div class="categories-item">        
+                        <img src="image/client 3.png" alt="">
+                        <h4>Mr. Samuel & Mrs. Priya</h4>
+                        <blockquote>“A truly magical experience!!!!"</blockquote>
+                    </div>
+            
+                    <div class="categories-item">        
+                        <img src="image/client 4.webp" alt="">
+                        <h4>Mr. Nimal & Mrs. Maria</h4>
+                        <blockquote>“Tradition meets modern astrology!!!"</blockquote>
+                    </div>
+                    
+                    <div class="categories-item">
+                        <img src="image/client 5.jpg" alt="">
+                        <h4>Mr. Ashraf & Mrs. Indrani</h4>
+                        <blockquote>“Trusted advice for a lifelong journey!”</blockquote>
+                    </div>
+            
+                    <div class="categories-item">        
+                        <img src="image/client 6.jpg" alt="">
+                        <h4>Mr. Kiran & Mrs. Shalini</h4>
+                        <blockquote>“Astrology that truly connects hearts!”</blockquote>
+                    </div>
+            
+                    <div class="categories-item">        
+                        <img src="image/client 7.jpg" alt="">
+                        <h4>Mr. Javid & Mrs. Meena</h4>
+                        <blockquote>“Stronger bond with Astro Affinity!”</blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Clients Reviews End -->
+     
+    <!--Customer Support-->
+    <div class="container-fluid team py-5" style="background-color: bisque;">
+        <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <h1 class="display-5 text-capitalize mb-3" style="font-family: Comic Sans;">Customer<span class="text-primary"> Support</span> Team</h1>
+                <p class="mb-0">Our dedicated Customer Support team is here to assist you with all your queries and concerns. We prioritize your satisfaction by providing prompt, reliable, and personalized solutions to ensure a seamless experience. Your happiness is our commitment!</p>
+            </div>
+    
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item p-4 pt-0 text-center">
+                        <div class="team-img mb-4">
+                            <img src="image/cs.jpg" class="img-fluid rounded-circle w-100" alt="Image">
+                        </div>
+                        <div class="team-content">
+                            <h4>Meet Our Sharan Elangovan!!</h4>
+                            <p>Customer Support Specialist</p>
+                            <div class="team-icon d-flex justify-content-center">
+                                <a class="btn btn-square btn-light rounded-circle mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-light rounded-circle mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-light rounded-circle mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Customer Support End -->
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Astro Affinity</h3>
+                <p style="color: black;">**Astro Affinity Matrimony** Founded in 2009, Astro Affinity Matrimony has been dedicated to uniting hearts through the wisdom of astrology. Our service blends traditional astrological practices with modern matchmaking techniques to create meaningful and lasting connections. With over a decade of experience, we specialize in crafting soulmate relationships guided by the stars, ensuring compatibility and happiness for every couple.</p>
+            </div>
+    
+            <!-- Working Hours -->        
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Monday - Friday</h2>
+                                <p style="color: black">(09:00 AM - 18:00 PM)</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="mb-3">
+                                <h5 style="color: black;">Saturday</h5>
+                                <p style="color: black;">(09:00 AM - 13:00 PM)</p>
+                            </div>
+                        </li>
+            
+                        <li>
+                            <div class="mb-3">
+                                <h5 style="color: black;">Sunday</h5>
+                            <p style="color: black;">(Closed)</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!--Branches -->
+            <div class="footer-section">
+                <h3>Our Branches</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Colombo</h6>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="mb-3">
+                         <h6 style="color: black;">Jaffna</h6>
+                        </div>
+                    </li>
+            
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Trincomalae</h6>
+                        </div>
+                    </li>
+            
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Batticalo</h6>
+                        </div>
+                    </li>
+            
+                    <li>
+                        <div class="mb-3">
+                            <h6 style="color: black;">Negembo</h6>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Mail Us: </h5>
+                            <p style="color: black">astro-affinity@gmail.com</p>
+                        </div>
+                    </li>
+            
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Call Us: </h5>
+                            <p style="color: black">+94-112857458</p>
+                        </div>
+                    </li>
+            
+                    <li>
+                        <div class="mb-3">
+                            <h5 style="color: black;">Visit Us: </h5>
+                            <p style="color: black">No13, Lilly Avenue, Wellawatte, Col-06</p>
+                        </div>
+                    </li>
+                </div>
+    
+            <!--Quick Links -->
+            <div class="footer-section">            
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="profile.html">Profiles</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="t&c.html">Terms and Conditions</a></li>
+                    <li><a href="pp.html">Privacy and Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Astro Affinity Matrimony | All Rights Reserved</p>
+            <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+        </div>
+    </footer>
+    <!--End of the Footer-->
+
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let counters = document.querySelectorAll('.counter-up');
+        let observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let target = +entry.target.getAttribute('data-target');
+                    let count = 0;
+                    let speed = 50; // Speed of counting (Lower = Faster)
+                    let updateCount = () => {
+                        let increment = target / 100; // Adjust for smooth animation
+                        count += increment;
+                        if (count < target) {
+                            entry.target.innerText = Math.ceil(count);
+                            setTimeout(updateCount, speed);
+                        } else {
+                            entry.target.innerText = target; // Ensure exact final value
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% visible
+        counters.forEach(counter => {
+            counter.setAttribute('data-target', counter.innerText);
+            counter.innerText = '0';
+            observer.observe(counter);
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const userProfileIcon = document.getElementById("userProfileIcon");
+        const profileModal = document.getElementById("profileModal");
+        const closeModal = document.querySelector(".close");
+
+        userProfileIcon.addEventListener("click", function () {
+            fetch("getUserProfile.php")
+            .then(response => response.json())
+            .then(userData => {
+                document.getElementById("editName").value = userData.name;
+                document.getElementById("editEmail").value = userData.email;
+                document.getElementById("editDob").value = userData.dob;
+                document.getElementById("editHeight").value = userData.height;
+                document.getElementById("editCity").value = userData.current_city;
+                const imageE1 = document.getElementById("profileImage");
+                imageE1.src = userData.photo_url || "default.jpg";
+                profileModal.style.display = "block";
+            });
+        });
+        closeModal.addEventListener("click", function () {
+            profileModal.style.display = "none";
+        });
+        document.getElementById("editProfileForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+            fetch("update_profile.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(response => {
+                if (response.trim() === "success") {
+                    Swal.fire("Profile Updated!", "Your changes have been saved.", "success");
+                    profileModal.style.display = "none";
+            } else {
+                Swal.fire("Error", "Failed to update profile. Try again.", "error");
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
