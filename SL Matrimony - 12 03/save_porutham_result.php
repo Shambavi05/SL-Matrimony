@@ -3,19 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Database connection
-$servername = "localhost";
-$username = "root";
-$password = ""; // or your DB password
-$dbname = "porutham_db";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die(json_encode(["error" => "❌ Database Connection Failed."]));
-}
+require_once "db_connect.php";
 
 // Example dynamic values (received from JS via POST)
 $boyNak = $_POST['boyNak'] ?? ''; 
